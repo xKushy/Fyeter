@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - Fyeter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .post-container {
+            border: 1px solid #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            background-color: #000000;
+        }
+        .post-image {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .author {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .author img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .interactions {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+       /* Estilo padrão do ícone de curtida */
+
+       .delete-icon {
+        margin-left: 10px;
+       }
+.like-icon {
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+/* Estilo aplicado quando o ícone de curtida é clicado */
+.like-icon.clicked {
+  filter: brightness(1) invert(0) drop-shadow(0 0 10px #ff00ff);
+}
+
+/* Remover a caixa preta ao redor do ícone */
+.interaction-icons {
+  display: flex;
+  align-items: center;
+}
+
+.interaction-icons img {
+  background: none;
+}
+
+.interaction-icons .like-count {
+  color: #525252;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.interaction-icons .like-count.clicked {
+  color: #ff00ff;
+}
+        .comment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .comment-modal-content {
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #ffffff;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .comments-container {
+            margin-top: 20px;
+        }
+        .comments-list .comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .comments-list .comment img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo2.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="custom-button"><img src="assets/upload.png" alt="Upload" class="button-icon"><span>Criar</span></a></li>
+            </ul>
+        </nav>
+        <div class="center-icons">
+            <a href="feed.html" class="custom-button"><img src="assets/feed.png" alt="Feed" class="button-icon"></a>
+            <a href="game.html" class="custom-button"><img src="assets/notificação.png" alt="Notificações" class="button-icon"></a>
+            <a href="profile.html" class="custom-button"><img src="assets/pesquisa.png" alt="Pesquisa" class="button-icon"></a>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
+        <script src="firebaseConfig.js"></script>
+    </header>
+
+    <main id="postsContainer">
+        <!-- Os posts serão adicionados dinamicamente aqui -->
+    </main>
+
+    <script type="module" src="feed.js"></script>
+</body>
+
+</html>

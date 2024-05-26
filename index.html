@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fyeter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo2.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="assets/logo2.png" alt="" style="width: 50px; height: auto;">
+        <nav>
+            <ul>
+                <li><a href="feed.html"><img src="assets/usuarios-com-perfil-de-grupo.png" alt="Inicio" style="width: 30px; height: auto;"></a></li>
+            </ul>
+        </nav>
+        <button id="loginButton"><img src="assets/porta.png" alt="Login" style="width: 30px; height: auto;"></button>
+        <button id="logoutButton" style="display:none;"><img src="assets/sair.png" alt="Logout" style="width: 30px; height: auto;"></button>
+    </header>
+    <main id="mainContent">
+        <div id="authContainer" style="display:none;">
+            <h2>Entrar</h2>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <h2>Criar conta</h2>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <input type="text" id="registerName" placeholder="Name" required>
+                <button type="submit">Criar</button>
+            </form>
+        </div>
+        <div id="postFormContainer" style="display:none;">
+            <h2>Criar nova publicação</h2>
+            <form class="dropzone-box" id="postForm">
+                <p>Arraste as fotos e os vídeos aqui</p>
+                <div class="dropzone-area">
+                    <label for="upload-file" class="custom-file-upload">
+                        <img src="assets/foto.png" alt="Escolher arquivo">
+                    </label>
+                    <input type="file" required id="upload-file" name="uploaded-file" accept="image/*, video/*">
+                </div>
+                <textarea id="post-caption" placeholder="Escreva uma legenda..."></textarea>
+                <div class="dropzone-actions">
+                    <button type="reset">Cancelar</button>
+                    <button id="submit-button" type="submit">Postar</button>
+                </div>
+            </form>
+        </div>
+        <div id="feedContainer"></div>
+    </main>
+    
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>

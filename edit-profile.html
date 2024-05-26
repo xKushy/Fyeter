@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Fyeter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo2.png" type="image/x-icon">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Estilos para a imagem de upload */
+#newProfilePicImage {
+    width: 100px; /* Defina o tamanho desejado para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Altera o cursor para indicar que a imagem é clicável */
+}
+
+    </style>
+</head>
+<body>
+      <header>
+        <div class="logo-container">
+            <img src="assets/logo2.png" alt="Logo" style="width: 50px; height: auto;">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="custom-button"><img src="assets/upload.png" alt="Upload" class="button-icon"><span>Criar</span></a></li>
+            </ul>
+        </nav>
+        <div class="center-icons">
+            <a href="feed.html" class="custom-button"><img src="assets/feed.png" alt="Feed" class="button-icon"></a>
+            <a href="game.html" class="custom-button"><img src="assets/notificação.png" alt="Notificações" class="button-icon"></a>
+            <a href="profile.html" class="custom-button"><img src="assets/pesquisa.png" alt="Notificações" class="button-icon"></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="editProfileContainer" class="profile-container">
+            <h2>Editar Perfil</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label for="newBio">Biografia:</label>
+                    <textarea id="newBio" name="newBio" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newProfilePic">Foto de Perfil:</label>
+                    <input type="file" id="newProfilePic" name="newProfilePic" accept="image/*" style="display: none;">
+                    <label for="newProfilePicInput" id="newProfilePicLabel">
+                        <img src="assets/foto.png" alt="Selecionar Foto" id="newProfilePicImage">
+                    </label>
+                </div>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="edit-profile.js"></script>
+</body>
+</html>

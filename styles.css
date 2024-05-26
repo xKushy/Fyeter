@@ -1,0 +1,428 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #000000; /* Cor de fundo preto */
+  color: #ffffff; /* Cor do texto branca */
+}
+
+header {
+  background-color: #000000; /* Cinza escuro para o cabeçalho */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid #ffffff; /* Adiciona uma borda branca na parte inferior */
+}
+
+header img {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+/* Estilos para os ícones do cabeçalho */
+.header-icon,
+.center-icons .custom-button img.button-icon {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  fill: #cccccc; /* Alterado para cinza claro */
+}
+
+.header-icon:hover,
+.center-icons .custom-button img.button-icon:hover {
+  fill: #858585; /* Azul */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+nav ul li a span {
+  margin-left: 10px; /* Espaço entre a imagem e o texto */
+}
+
+/* Estilos dos botões de login/logout */
+button {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2e2e2e;
+}
+
+#loginButton,
+#logoutButton {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+#loginButton img,
+#logoutButton img {
+  width: 30px;
+  height: auto;
+}
+
+#loginButton:hover,
+#logoutButton:hover {
+  filter: brightness(0.8);
+}
+
+#logoutButton {
+  display: none;
+}
+
+#logoutButton.show {
+  display: inline-block;
+}
+
+/* Estilos do main */
+main {
+  padding: 2rem;
+}
+
+#authContainer,
+#postFormContainer {
+  max-width: 500px;
+  margin: 40px auto 40px; /* Adiciona espaçamento superior para afastar o contêiner da parte superior da página */
+  background-color: #000000;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #ffffff; /* Adiciona uma borda branca na parte inferior */
+}
+
+#authContainer h2,
+#postFormContainer h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: white;
+}
+
+form button {
+  background-color: #2e2e2e;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #2e2e2e;
+}
+
+/* Estilos do rodapé */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  color: #7c70d600;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para o botão de upload */
+.file-upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px; /* Espaçamento inferior adicionado */
+}
+
+.file-upload-icon:hover {
+  border-color: #aaa;
+}
+
+.file-upload-icon svg {
+  width: 64px;
+  height: 64px;
+  fill: #666;
+}
+
+.file-upload-icon input[type="file"] {
+  display: none;
+}
+
+/* Estilo para o botão de upload */
+.dropzone-box {
+  margin-top: 20px;
+}
+
+.dropzone-area {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.dropzone-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Estilo para os posts */
+.post-container {
+  background-color: #000000;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+  margin-bottom: 20px;
+  padding: 5px;
+  max-width: 350px; /* Reduzir a largura máxima */
+  width: calc(100% - 20px); /* Ocupar o espaço disponível, considerando a margem */
+  margin: 20px auto 0; /* Espaçamento superior entre o primeiro post e o topo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 1px solid #ffffff; /* Adiciona uma borda branca na parte inferior */
+}
+
+.post-container:not(:first-child) {
+  margin-top: 10px; /* Espaçamento entre os posts */
+}
+
+.post-container h3 {
+  margin-top: 0;
+}
+
+.post-image {
+  width: 100%;
+  margin-top: 6px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.interactions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Aumentar a margem entre o conteúdo do post e as interações */
+  margin-bottom: 5px; /* Reduzir a margem inferior das interações */
+}
+
+.like-icon,
+.comment-icon,
+.share-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  fill: #cccccc; /* Alterado para cinza claro */
+}
+
+.like-icon:hover,
+.comment-icon:hover,
+.share-icon:hover {
+  fill: #858585; /* Azul */
+}
+
+.like-count {
+  font-size: 15px;
+  color: #55585c;
+  margin-left: 5px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.comment-count {
+  font-size: 15px;
+  color: #55585c;
+  margin-left: 5px;
+}
+
+.comments-section {
+  margin-top: 10px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.author-container {
+  display: flex;
+  align-items: center;
+}
+
+.author-name {
+  margin-right: 10px; /* Ajuste conforme necessário */
+}
+
+.author-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Estilos para a textarea */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Permite redimensionamento vertical */
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box; /* Mantém a largura consistente incluindo padding e border */
+  min-height: 100px; /* Altura mínima da textarea */
+  max-height: 300px; /* Altura máxima da textarea */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando o conteúdo excede a altura máxima */
+  transition: border-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor da borda */
+}
+
+textarea:focus {
+  outline: none; /* Remove a borda de foco padrão */
+  border-color: #4CAF50; /* Altera a cor da borda quando a textarea está em foco */
+}
+
+/* Estilos para o placeholder */
+textarea::placeholder {
+  color: #999; /* Cor do texto do placeholder */
+}
+
+/* Estilos para a barra de rolagem */
+textarea::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Cor do fundo da barra de rolagem */
+  border-radius: 4px; /* Raio da borda da barra de rolagem */
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Cor do fundo da barra de rolagem quando hover */
+}
+
+/* Estilo para o botão de escolher arquivo */
+.custom-file-upload {
+  border: 0px solid #ccc; /* Adiciona uma borda ao redor do botão */
+  display: inline-block;
+  padding: 6px 12px; /* Adiciona espaçamento interno */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  background-color: #20202000; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  border-radius: 5px; /* Adiciona bordas arredondadas */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+  margin-top: 20px;
+}
+
+.custom-file-upload:hover {
+  background-color: #7c70d600; /* Altera a cor de fundo ao passar o mouse */
+}
+
+input[type="file"] {
+  display: none; /* Esconde o botão de escolher arquivo original */
+}
+
+/* Estilo para a imagem dentro do botão de escolher arquivo */
+.custom-file-upload img {
+  width: 120px; /* Altere o tamanho conforme necessário */
+  height: auto; /* Mantenha a proporção */
+}
+
+/* Avatar do usuário */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #cccccc;
+  margin-right: 10px;
+}
+
+/* Nome do usuário */
+.user-name {
+  color: #ffffff;
+}
+
+/* Data e hora da publicação */
+.post-time {
+  color: #aaa;
+}
+
+/* Conteúdo da publicação */
+.post-content {
+  color: #ffffff;
+}
+
+/* Estilo para o formulário de registro */
+#registerForm {
+  margin-bottom: 20px; /* Adiciona uma margem na parte inferior do formulário de registro */
+}
